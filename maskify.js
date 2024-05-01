@@ -23,15 +23,16 @@ const maskify = (cardNumber) => {
   if (cardNumberType !== "string" && cardNumberType !== "number") {
     return "";
   }
-  const stringedCardNumber = String(cardNumber);
-  if (stringedCardNumber.length < 6) {
+
+  const stringedCard = String(cardNumber);
+  if (stringedCard.length <= 6) {
     return cardNumber;
   }
 
-  const firstCharacter = stringedCardNumber.slice(0, 1);
-  const lastFourCharacters = stringedCardNumber.slice(-4);
-  const maskedCharacters = stringedCardNumber
-    .slice(1, stringedCardNumber.length - 4)
+  const firstCharacter = stringedCard.slice(0, 1);
+  const lastFourCharacters = stringedCard.slice(-4);
+  const maskedCharacters = stringedCard
+    .slice(1, stringedCard.length - 4)
     .replace(/\d/g, "#");
   return `${firstCharacter}${maskedCharacters}${lastFourCharacters}`;
 };
