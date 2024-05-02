@@ -37,4 +37,4 @@ const maskify = (cardNumber) => {
   return `${firstCharacter}${maskedCharacters}${lastFourCharacters}`;
 };
 
-console.log(maskify("1123-3213-1231"));
+console.log(maskify("4556-3646-0793-5616"));
